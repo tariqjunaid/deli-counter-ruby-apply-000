@@ -1,8 +1,14 @@
-khan_deli = []
-def take_a_number(khan_deli, name)
-  khan_deli << name
-  puts "Welcome, #{name}. You are number #{khan_deli.length} in line."
+nkhan_deli = []
+$num = 0
+def take_a_number(khan_deli)
+  $num += 1
+  return "Welcome, you are number #{$num}."
 end
+
+take_a_number(khan_deli)
+take_a_number(khan_deli)
+take_a_number(khan_deli)
+take_a_number(khan_deli)
 
 def now_serving(khan_deli)
   if khan_deli.length == 0
@@ -19,8 +25,8 @@ def line(khan_deli)
   else
     message = "The line is currently:"
     khan_deli.each_with_index do |value, index|
-    message << " #{index.to_i+1}. #{value}"
+      message << " #{index+1}. #{value}"
     end
-      puts "#{message}"
+    puts "#{message}"
   end
 end
